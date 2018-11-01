@@ -11,7 +11,7 @@ import UIKit
 public class ViewController: UIViewController
 {
 
-    override func viewDidLoad() -> Void
+    public override func viewDidLoad() -> Void
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
