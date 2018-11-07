@@ -19,7 +19,7 @@ public class ArtCollectionViewController: UICollectionViewController
     private let itemsPerRowCompact : CGFloat = 4
     private let itemsPerRowNormal : CGFloat = 6
     
-    private lazy let creativeCS : [UIImage?] =
+    private let creativeCS : [UIImage?] =
     {
         return [
             UIImage(named: "octocat"),
@@ -51,7 +51,7 @@ public class ArtCollectionViewController: UICollectionViewController
         ]
     }()
     
-    private lazy let
+    //MARK: - Lifecycle
 
     public override func viewDidLoad() -> Void
     {
@@ -69,6 +69,29 @@ public class ArtCollectionViewController: UICollectionViewController
    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    
+    
+    
+    
+    
+    
+    
+    // MARK: UICollectionViewDataSource
+    
+    public override func numberOfSections(in collectionView: UICollectioView) -> Int
+    {
+        return 1
+    }
+    
+    
+    
+    public override func collectionView(   collctionView: UICollectioView, numberOfItemsInSection section: Int) ->Int
+    {
+        return creativeCS.count
+    }
+    
+    public override func
+    
     }
 
     /*
