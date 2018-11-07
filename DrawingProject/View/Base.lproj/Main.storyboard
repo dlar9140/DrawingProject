@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="468" y="40.929535232383813"/>
         </scene>
-        <!--View Controller-->
+        <!--Art Collection View Controller-->
         <scene sceneID="r8s-KL-Bfc">
             <objects>
-                <viewController id="8Jo-UO-eX7" sceneMemberID="viewController">
+                <viewController id="8Jo-UO-eX7" customClass="ArtCollectionViewController" customModule="DrawingProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ikl-Nv-oP2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

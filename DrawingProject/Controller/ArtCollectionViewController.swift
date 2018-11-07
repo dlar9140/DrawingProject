@@ -10,9 +10,51 @@ import UIKit
 
 private let reuseIdentifier = "artIdentifier"
 
-public class ArtCollectionViewController: UICollectionViewController {
+public class ArtCollectionViewController: UICollectionViewController
+{
+    
+    //MARK: Data members for Creativity Screen
+    
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    private let itemsPerRowCompact : CGFloat = 4
+    private let itemsPerRowNormal : CGFloat = 6
+    
+    private lazy let creativeCS : [UIImage?] =
+    {
+        return [
+            UIImage(named: "octocat"),
+            UIImage(named: "iphoneScreenShot"),
+            UIImage(named: "Lebron 16's"),
+            UIImage(named: "Tesla"),
+            UIImage(named: "Basketball"),
+            UIImage(named: "octocat"),
+            UIImage(named: "octocat"),
+            UIImage(named: "octocat"),
+            UIImage(named: "octocat"),
+            UIImage(named: "octocat"),
+            ]
+    }()
+    
+    private lazy var labels : [String] =
+    {
+        return [
+            "This",
+            "needs",
+            "to",
+            "be",
+            "one",
+            "to",
+            "one",
+            "with",
+            "creativeCS",
+            "above"
+        ]
+    }()
+    
+    private lazy let
 
-    public override func viewDidLoad() {
+    public override func viewDidLoad() -> Void
+    {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
