@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change screen"/>
                                 <connections>
-                                    <segue destination="DOu-WE-oY6" kind="show" id="fPY-8K-ZVs"/>
+                                    <segue destination="8Jo-UO-eX7" kind="show" id="7yE-76-7KQ"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sK4-3a-dcA" userLabel="Drawing View" customClass="DrawingView" customModule="DrawingProject" customModuleProvider="target">
@@ -41,17 +41,17 @@
             <point key="canvasLocation" x="468" y="40.929535232383813"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="QN9-A7-ukM">
+        <scene sceneID="r8s-KL-Bfc">
             <objects>
-                <viewController id="DOu-WE-oY6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="upN-sc-G71">
+                <viewController id="8Jo-UO-eX7" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ikl-Nv-oP2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="3x4-9R-eGr"/>
+                        <color key="backgroundColor" red="1" green="0.57864558399265809" blue="0.31316201594854343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="LhA-HA-nUX"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4JJ-Ju-nFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXC-N5-ITo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1183" y="41"/>
         </scene>
