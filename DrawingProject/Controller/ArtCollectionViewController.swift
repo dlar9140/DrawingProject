@@ -23,10 +23,10 @@ public class ArtCollectionViewController: UICollectionViewController
     {
         return [
             UIImage(named: "octocat"),
-            UIImage(named: "iphoneScreenShot"),
-            UIImage(named: "Lebron 16's"),
-            UIImage(named: "Tesla"),
-            UIImage(named: "Basketball"),
+            UIImage(named: "octocat"),
+            UIImage(named: "octocat"),
+            UIImage(named: "octocat"),
+            UIImage(named: "octocat"),
             UIImage(named: "octocat"),
             UIImage(named: "octocat"),
             UIImage(named: "octocat"),
@@ -51,6 +51,8 @@ public class ArtCollectionViewController: UICollectionViewController
         ]
     }()
     
+    
+    
     //MARK: - Lifecycle
 
     public override func viewDidLoad() -> Void
@@ -60,21 +62,18 @@ public class ArtCollectionViewController: UICollectionViewController
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
     }
-
-   public override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     
-    
-    
-    
-    
-    
+    /*
+ // Mark: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ ovveride func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using [segue destinationViewController].
+    // pass the selected object to the new view controller.
+ }
+ */
     
     // MARK: UICollectionViewDataSource
     
@@ -85,14 +84,48 @@ public class ArtCollectionViewController: UICollectionViewController
     
     
     
-    public override func collectionView(   collctionView: UICollectioView, numberOfItemsInSection section: Int) ->Int
+    public override func collectionView(_ collctionView: UICollectioView, numberOfItemsInSection section: Int) ->Int
     {
         return creativeCS.count
     }
     
-    public override func
-    
+    public override func collectionView(_ collectionView: UICollectionView,
+                                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as! ArtCell
+        
+            artCell.backgroundColor = .blue
+            artCell.artImage.image = creativeCS[indexPath.row]
+            artCell.artLabel.text = labels[indexPath.row]
+        
+            return artCell
     }
+    
+    // Mark UICollectionViewDelegate
+    
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                                layout collectionViewLayout: UICollectionViewLLayout,
+                                sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        
+        let paddingSpace = sectionInsets.left * (itemsPerRowCompact * 1)
+        let avaliableWidth = view.frame.width - paddingSpace
+        let widthPerItem = avaliableWidth / itemsPerRowCompact
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    public func collectionView(_ collectionView: UIcollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return sectionInsets
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collcectionViewLayout: UIcollectionViewLayout,
+                               minimumLineSpacingForSectionAt section: Int) -> CGFloat
 
     /*
     // MARK: - Navigation
