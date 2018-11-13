@@ -32,7 +32,8 @@ public class ArtCollectionViewController: UICollectionViewController
             UIImage(named: "octocat"),
             UIImage(named: "octocat"),
             UIImage(named: "octocat"),
-            ]
+            
+        ]
     }()
     
     private lazy var labels : [String] =
@@ -77,32 +78,32 @@ public class ArtCollectionViewController: UICollectionViewController
     
     // MARK: UICollectionViewDataSource
     
-    public override func numberOfSections(in collectionView: UICollectioView) -> Int
+    public override func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         return 1
     }
     
     
     
-    public override func collectionView(_ collctionView: UICollectioView, numberOfItemsInSection section: Int) ->Int
+    public override func collectionView(_ collctionView: UICollectionView, numberOfItemsInSection section: Int) ->Int
     {
         return creativeCS.count
     }
     
+    //MARK: UICollectionViewDataSource
     public override func collectionView(_ collectionView: UICollectionView,
                                          cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as! ArtCell
+        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as! ArtCell,
         
-            artCell.backgroundColor = .blue
-            artCell.artImage.image = creativeCS[indexPath.row]
-            artCell.artLabel.text = labels[indexPath.row]
+            ArtCell.backgroundColor = .blue
+            ArtCell.artImage.image = creativeCS[indexPath.row]
+            ArtCell.artLabel.text = labels[indexPath.row]
         
             return artCell
     }
     
     // Mark UICollectionViewDelegate
-    
     
     public func collectionView(_ collectionView: UICollectionView,
                                 layout collectionViewLayout: UICollectionViewLLayout,
@@ -116,7 +117,7 @@ public class ArtCollectionViewController: UICollectionViewController
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
-    public func collectionView(_ collectionView: UIcollectionView,
+    public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAt section: Int) -> UIEdgeInsets
     {
@@ -124,8 +125,11 @@ public class ArtCollectionViewController: UICollectionViewController
     }
     
     public func collectionView(_ collectionView: UICollectionView,
-                               layout collcectionViewLayout: UIcollectionViewLayout,
+                               layout collcectionViewLayout: UICollectionViewLayout,
                                minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return sectionInsets.left
+    }
 
     /*
     // MARK: - Navigation
@@ -138,12 +142,6 @@ public class ArtCollectionViewController: UICollectionViewController
     */
 
     // MARK: UICollectionViewDataSource
-
-   public override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
 
    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
