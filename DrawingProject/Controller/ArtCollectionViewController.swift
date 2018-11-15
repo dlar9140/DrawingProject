@@ -157,6 +157,30 @@ public class ArtCollectionViewController: UICollectionViewController
     }
 
     // MARK: UICollectionViewDelegate
+    
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        
+        let imageView = UIImageView(image: creativeCS[indexPath.row])
+        imageView.frame = self.view.frame
+        imageView.backgroundColor = .black
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        
+        self.view.addSubview(imageView)
+    }
+    
+    // Use to go back from full mode
+    @@objc
+    private func dismissFullscreenImage(_ sender: UITapGestureRecognizer)
+    {
+            sender.view?.removeFromSuperview()
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAT section: Int) -> UIEdgeInserts
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
