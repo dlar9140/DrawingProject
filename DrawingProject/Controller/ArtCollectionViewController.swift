@@ -77,14 +77,7 @@ public class ArtCollectionViewController: UICollectionViewController
  */
     
     // MARK: UICollectionViewDataSource
-    
-    public override func numberOfSections(in collectionView: UICollectionView) -> Int
-    {
-        return 1
-    }
-    
-    
-    
+
     public override func collectionView(_ collctionView: UICollectionView, numberOfItemsInSection section: Int) ->Int
     {
         return creativeCS.count
@@ -94,11 +87,11 @@ public class ArtCollectionViewController: UICollectionViewController
     public override func collectionView(_ collectionView: UICollectionView,
                                          cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as! ArtCell,
+        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtCell
         
-            ArtCell.backgroundColor = .blue
-            ArtCell.artImage.image = creativeCS[indexPath.row]
-            ArtCell.artLabel.text = labels[indexPath.row]
+            artCell.backgroundColor = .blue
+            artCell.artImage.image = creativeCS[indexPath.row]
+            artCell.artLabel.text = labels[indexPath.row]
         
             return artCell
     }
@@ -106,7 +99,7 @@ public class ArtCollectionViewController: UICollectionViewController
     // Mark UICollectionViewDelegate
     
     public func collectionView(_ collectionView: UICollectionView,
-                                layout collectionViewLayout: UICollectionViewLLayout,
+                                layout collectionViewLayout: UICollectionViewLayout,
                                 sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         
@@ -143,18 +136,9 @@ public class ArtCollectionViewController: UICollectionViewController
 
     // MARK: UICollectionViewDataSource
 
-   public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
+   
 
-  public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
-    }
+  
 
     // MARK: UICollectionViewDelegate
     
@@ -172,15 +156,13 @@ public class ArtCollectionViewController: UICollectionViewController
     }
     
     // Use to go back from full mode
-    @@objc
+    @objc
     private func dismissFullscreenImage(_ sender: UITapGestureRecognizer)
     {
             sender.view?.removeFromSuperview()
     }
     
-    public func collectionView(_ collectionView: UICollectionView,
-                               layout collectionViewLayout: UICollectionViewLayout,
-                               insetForSectionAT section: Int) -> UIEdgeInserts
+   
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

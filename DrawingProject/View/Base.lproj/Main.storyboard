@@ -22,6 +22,9 @@
                                 <rect key="frame" x="135" y="509" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change screen"/>
+                                <connections>
+                                    <segue destination="2iu-ZZ-Pfy" kind="show" id="Yg3-1f-p7K"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sK4-3a-dcA" userLabel="Drawing View" customClass="DrawingView" customModule="DrawingProject" customModuleProvider="target">
                                 <rect key="frame" x="33" y="59" width="307" height="403"/>
